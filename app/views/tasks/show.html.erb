@@ -1,11 +1,13 @@
 
 <h1><%= @task.title %></h1>
 <p><%= @task.details %></p>
-<% if @task.completed == false %>
+<% if @task.completed == true %>
   <p>Completed</p>
 <% else %>
   <p>Incomplete</p>
 <% end %>
 
-  <%= link_to "Back to all Tasks", tasks_path, class: 'btn btn-primary' %>
+<%= link_to "Delete Task", task_path(@task), method: :delete, class: 'btn btn-primary', data: { confirm: "Are you sure?" } %>
+<%= link_to "Edit Task", edit_task_path, class: 'btn btn-primary' %>
+<%= link_to "Back to all Tasks", tasks_path, class: 'btn btn-primary' %>
 
