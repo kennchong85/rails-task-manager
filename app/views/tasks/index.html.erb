@@ -1,0 +1,12 @@
+
+<h1>My Tasks</h1>
+
+  <% @tasks.each do |task| %>
+    <% if task.completed == false  %>
+      <p id="completed" ><%= link_to task.title, task_path(task) %></p>
+    <% else %>
+      <p id="incomplete"><%= link_to task.title, task_path(task) %></p>
+    <% end %>
+  <% end %>
+
+<%= link_to "Create New Task", new_task_path, class: 'btn btn-primary' %>

@@ -1,0 +1,11 @@
+
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
+<% if @task.completed == false %>
+  <p>Completed</p>
+<% else %>
+  <p>Incomplete</p>
+<% end %>
+
+  <%= link_to "Back to all Tasks", tasks_path, class: 'btn btn-primary' %>
+
